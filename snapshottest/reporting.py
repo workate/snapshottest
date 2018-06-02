@@ -32,12 +32,12 @@ def reporting_lines(testing_cli):
             colored('{} snapshots deprecated', 'yellow', attrs=bold) + ' in {} test suites. '
             + inspect_str
         ).format(*unvisited_snapshots)
-     # Print deprecated snapshots
-     for module in SnapshotModule.get_modules():
-         for unvisited_snapshot in module.unvisited_snapshots:
-              yield (
-                  colored('{} is deprecated', 'yellow')
-              ).format(unvisited_snapshot)
+    # Print deprecated snapshots
+    for module in SnapshotModule.get_modules():
+        for unvisited_snapshot in module.unvisited_snapshots:
+            yield (
+                colored('{} is deprecated', 'yellow')
+            ).format(unvisited_snapshot)
 
 
 def diff_report(left, right):
